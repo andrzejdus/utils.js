@@ -9,12 +9,11 @@ var Looper = function(onLoopFrameListener) {
 
   this.start = function() {
     if (isLoopRunning === false) {
-      if (lastTime === null) {
-        // TODO Do wee need -1? If so explain why.
-        lastTime = new Date().getTime() - 1;
-      }
-
       isLoopRunning = true;
+
+      // TODO Do wee need -1? If so explain why.
+      lastTime = new Date().getTime() - 1;
+
       onLoopFrame();
     }
   };
