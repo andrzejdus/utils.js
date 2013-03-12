@@ -30,5 +30,15 @@ var Utils = {
     else if (element.detachEvent) {
       element.detachEvent(eventName, callback);
     }
+  },
+
+  setScrollTop: function(value) {
+    if (document.body !== undefined &&
+        document.body.scrollTop != undefined) {
+      document.body.scrollTop = value;
+    }
+    else {
+      document.documentElement.scrollTop = value;
+    }
   }
 };
