@@ -12,7 +12,7 @@ var Looper = function(onLoopFrameListener) {
       isLoopRunning = true;
 
       // TODO Do wee need -1? If so explain why.
-      lastTime = new Date().getTime() - 1;
+      lastTime = Date.now() - 1;
 
       onLoopFrame();
     }
@@ -26,7 +26,7 @@ var Looper = function(onLoopFrameListener) {
 
   var onLoopFrame = function() {
     if (isLoopRunning === true) {
-      var time = new Date().getTime();
+      var time = Date.now();
       deltaTime = time - lastTime;
       lastTime = time;
 
